@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+
 class FormContainer extends Component {
   constructor() {
     super();
@@ -10,12 +10,11 @@ class FormContainer extends Component {
   render() {
     return (
       <form id="article-form">
+        <label>FormContainer</label>
       </form>
     );
   }
 }
-const wrapper = document.getElementById("create-article-form");
-console.log('wrapper',wrapper)
-wrapper ? ReactDOM.render(<FormContainer />, wrapper) : false;
+
 
 export default FormContainer;
