@@ -1,9 +1,18 @@
-import FormContainer from "./js/components/container/FormContainer.js";
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import './scss/index.scss';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      title: ""
+    };
+  }
+  render() {
+    return (
+      <h1>App</h1>
+    );
+  }
+}
 
 
-
-const wrapper = document.getElementById("app");
-wrapper ? ReactDOM.render(<FormContainer />, wrapper) : false;
+export default App;
