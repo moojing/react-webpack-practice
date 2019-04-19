@@ -57,7 +57,7 @@ module.exports = {
             chunkFilename: 'scss/[id].css',
       }),
       new HtmlWebpackPlugin({
-        template: './src/index.html'
+        template: './static/index.html'
       })
     ],
     devServer: {
