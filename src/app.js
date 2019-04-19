@@ -9,7 +9,10 @@ class App extends Component {
   }
   render() {
     return (
-      <h1>App</h1>
+      <div>
+        <h1>App</h1>
+        <img src="/assets/index.png"/>
+      </div>
     );
   }
 }
