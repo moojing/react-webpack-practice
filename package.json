@@ -1,7 +1,7 @@
 {
-  "name": "splendor-v1.0.0",
+  "name": "react-webpack-starter",
   "version": "1.0.0",
-  "description": "a re-structure version of splendor using react. ",
+  "description": "A starting template for react.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
