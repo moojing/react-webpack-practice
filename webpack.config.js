@@ -68,6 +68,7 @@ module.exports = {
     proxy: {
       '/v1': 'http://localhost:3001'
     },
-    open: 'Google Chrome'
+    open: 'Google Chrome',
+    hot: true
   }
 }
