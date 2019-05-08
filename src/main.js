@@ -1,10 +1,16 @@
-import App from './App.js';
+import { BrowserRouter } from "react-router-dom";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import './scss/index.scss';
 
+import './scss/index.scss'
+import store from './store'
+import App from './App.js'
 
+ReactDOM.render(
+    <BrowserRouter>
+      <Provider {...store}>
+        <App/>
+      </Provider>
+    </BrowserRouter>,  
+    document.getElementById("app")) 
 
-const wrapper = document.getElementById("app");
-console.log('wrapper',wrapper)
-wrapper ? ReactDOM.render(<App />, wrapper) : false;
