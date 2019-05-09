@@ -12,7 +12,7 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].js'
   },
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
