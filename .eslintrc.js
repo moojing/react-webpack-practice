@@ -6,7 +6,9 @@ module.exports = {
     ],
     "rules": {
       "max-len": [1, 120, 2, {ignoreComments: true}],
-      "semi": ["error", "never"]
+      "semi": ["error", "never"],
+      "linebreak-style": ["error", "unix"],
+      "quotes": ["error", "single"],
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "env": {
