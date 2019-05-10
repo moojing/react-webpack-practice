@@ -1,5 +1,5 @@
 {
-  "name": "react-pinger",
+  "name": "webpack-react-starter",
   "version": "1.0.0",
   "description": "A starting template for react.",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --mode development",
     "dev": "webpack-dev-server --mode=development  --watch --progress   ",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production --progress",
     "lint": "eslint .  --fix",
     "push:both":"git push origin master & git push starter master"
   },
