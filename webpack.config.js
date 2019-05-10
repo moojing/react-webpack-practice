@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce:"pre",
+        enforce:'pre',
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint-loader'
@@ -60,8 +60,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: 'scss/[name].css',
-      chunkFilename: 'scss/[id].css'
+      filename: 'css/[name].css',
+      chunkFilename: 'css/[id].css'
     }),
     new HtmlWebpackPlugin({
       template: './static/index.html'
