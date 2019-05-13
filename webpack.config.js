@@ -4,15 +4,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const path = require('path')
 module.exports = {
   entry: {
-    bundle: './src/index.js'
+    index: './src/index.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/',
-    filename: '[name].js',
-    chunkFilename: '[name].js'
+    filename: '[name].bundle.js',
+    chunkFilename: '[name][id].bundle.js'
   },
-  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -32,7 +31,7 @@ module.exports = {
               ['@babel/plugin-proposal-decorators', { 'decoratorsBeforeExport': true }]]
         }
       }, {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -61,20 +60,13 @@ module.exports = {
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: 'css/[name].css',
-      chunkFilename: 'css/[id].css'
+      chunkFilename: 'css/[name]-[id].css'
     }),
     new HtmlWebpackPlugin({
       template: './static/index.html'
     }),
     new CleanWebpackPlugin()
   ],
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    historyApiFallback: true,
-    proxy: {
-      '/v1': 'http://localhost:3001'
-    },
-    open: 'Google Chrome',
-    hot: true
-  }
+  
+ 
 }
