@@ -7,6 +7,7 @@ module.exports = merge(baseConfig, {
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         historyApiFallback: true,
+        port:8003,
         proxy: {
           '/v1': 'http://localhost:3001'
         },
