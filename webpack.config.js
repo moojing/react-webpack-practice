@@ -22,7 +22,7 @@ module.exports = {
   },
   output: {
     path: path.join( __dirname, 'dist' ),
-    publicPath: '/',
+    // publicPath: '/',
     filename: '[name].bundle.js',
     chunkFilename: '[name][id].bundle.js'
   },
@@ -50,31 +50,45 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: process.env.NODE_ENV === 'development'
+              hmr: process.env.NODE_ENV === 'development',
+              publicPath: '../'
             }
           },
+          
           'css-loader',
           'postcss-loader',
           'sass-loader'
         ]
-      }, {
-        test: /\.(svg|png|jpg)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            // limit: 8192,
-            name: 'image/[hash:8].[name].[ext]'
-          }
-        }]
-      }
+    },   
+     
+      {
+
+				test: /\.(jpg|png|gif)$/,
+				use: {
+						loader: 'url-loader',
+						options: {
+								limit: 50,
+								fallback: 'file-loader',
+								name: '[name].[ext]',
+								publicPath: 'assets/img/',
+								outputPath: 'assets/img/'
+						}
+				}
+			}
     ]
+  },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@scss': path.resolve(__dirname, '../src/scss'),
+      '@img': path.resolve(__dirname, '../src/img'),
+      '@': path.resolve(__dirname, '../src')
+    },
   },
   plugins: [
     new MiniCssExtractPlugin( {
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: 'css/[name].css',
-      chunkFilename: 'css/[name]-[id].css'
+      chunkFilename: 'css/[name]-[id].css',
     } ),
     new HtmlWebpackPlugin( {
       template: './static/index.html'
